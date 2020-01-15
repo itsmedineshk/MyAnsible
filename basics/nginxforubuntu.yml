@@ -1,0 +1,18 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Installing nginx on ubuntu
+    apt:
+      name: nginx
+      update_cache: yes
+      state: present
+  - name: Allowing UFW 
+    ufw:
+      state: enabled
+      rule: allow
+      name: Nginx HTTP
+  - name: Starting Nginx Server
+    service:
+      name: nginx
+      state: started
