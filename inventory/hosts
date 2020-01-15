@@ -1,0 +1,11 @@
+[ubuntu]
+localhost
+ip-10-1-200-147.ec2.internal
+
+
+[redhat]
+ip-10-1-200-190.ec2.internal
+
+
+[webserver]
+localhost
