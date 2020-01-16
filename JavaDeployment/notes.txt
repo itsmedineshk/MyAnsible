@@ -1,0 +1,18 @@
+sudo apt-get update
+sudo apt-get install tomcat7
+curl http://qt.in/test.war -o /var/lib/tomcat7/webapps/test.war
+
+2 => 
+tasks:
+- apt:
+    name: tomcat7
+    update_cache: yes
+    state: present
+- get_url:
+    url: http://qt.in/test.war
+    dest: /var/lib/tomact7/webapps/test.war
+handlers:
+- name: restart tomcat
+  service:
+    name: tomcat7
+    state: restarted
