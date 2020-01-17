@@ -1,0 +1,7 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  roles:
+  - geerlingguy.java
+  - zaxos.tomcat-ansible-role
